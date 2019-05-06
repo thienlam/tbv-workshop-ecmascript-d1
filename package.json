@@ -1,0 +1,26 @@
+{
+  "name": "tbv-workshop-ecmascript-d1",
+  "version": "1.0.0",
+  "description": "TBV Workshop Repository - ECMAScript Day 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phongkt-dev/tbv-workshop-ecmascript-d1.git"
+  },
+  "author": "phongkt-dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phongkt-dev/tbv-workshop-ecmascript-d1/issues"
+  },
+  "homepage": "https://github.com/phongkt-dev/tbv-workshop-ecmascript-d1#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.4",
+    "jest": "^24.8.0"
+  }
+}
