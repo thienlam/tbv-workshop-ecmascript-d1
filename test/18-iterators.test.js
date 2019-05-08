@@ -35,7 +35,7 @@ test('can use the ... operator on the iterator', () => {
   expect(rest).toEqual([2, 3])
 })
 
-test('can create a custom iterator', () => {
+test.skip('can create a custom iterator', () => {
   const randomRandomNumbersGenerator = {
     max: 20,
     min: 10,
@@ -62,7 +62,7 @@ test('can create a custom iterator', () => {
   }
 })
 
-test('can create a custom iterator with a generator', () => {
+test.skip('can create a custom iterator with a generator', () => {
   const randomRandomNumbersGenerator = {
     max: 20,
     min: 10,
