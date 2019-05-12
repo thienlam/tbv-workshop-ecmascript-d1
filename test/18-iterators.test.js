@@ -1,20 +1,20 @@
 test('can get the iterator from an array', () => {
   const array = [1, 2, 3]
   // DON'T PEAK AT THE NEXT TESTS!
-  const iterator = '?' // how do you get the iterator?
+  const iterator = array[Symbol.iterator]() // how do you get the iterator?
   expect(typeof iterator.next === 'function').toBe(true)
 })
 
 test('can next() the iterator multiple times', () => {
   const string = 'hello' // <-- YES, this is iterable!
   const iterator = string[Symbol.iterator]()
-  expect(iterator.next()).toEqual( /* ENTER YOUR ANSWER HERE */ )
-  expect(iterator.next()).toEqual( /* ENTER YOUR ANSWER HERE */ )
-  expect(iterator.next()).toEqual( /* ENTER YOUR ANSWER HERE */ )
-  expect(iterator.next()).toEqual( /* ENTER YOUR ANSWER HERE */ )
-  expect(iterator.next()).toEqual( /* ENTER YOUR ANSWER HERE */ )
-  expect(iterator.next()).toEqual( /* ENTER YOUR ANSWER HERE */ )
-  expect(iterator.next()).toEqual( /* ENTER YOUR ANSWER HERE */ )
+  expect(iterator.next()).toEqual({ value: 'h', done: false })
+  expect(iterator.next()).toEqual({ value: 'e', done: false })
+  expect(iterator.next()).toEqual({ value: 'l', done: false })
+  expect(iterator.next()).toEqual({ value: 'l', done: false })
+  expect(iterator.next()).toEqual({ value: 'o', done: false })
+  expect(iterator.next()).toEqual({value: undefined, done: true })
+  expect(iterator.next()).toEqual({value: undefined, done: true })
 })
 
 test('can iterate over an interable with for .. of', () => {
@@ -24,6 +24,9 @@ test('can iterate over an interable with for .. of', () => {
   // that gets the sum of
   // all items in the array
   // ex: `sum += val`
+  for (const val of array) {
+      sum += val
+  }
   expect(sum).toBe(6)
 })
 
@@ -31,7 +34,7 @@ test('can use the ... operator on the iterator', () => {
   const set = new Set([1, 2, 2, 3])
   // use destructuring and the ... operator to create a
   // `rest` variable that only has the last two items.
-  const [rest] = set
+  const [one, ...rest] = [...set]
   expect(rest).toEqual([2, 3])
 })
 
